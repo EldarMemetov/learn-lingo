@@ -1,0 +1,24 @@
+.link {
+  text-decoration: none;
+  color: #101828;
+  padding: 10px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 125%;
+  transition: color 0.3s ease, transform 0.3s ease; /* Плавная анимация цвета и трансформации */
+}
+
+.link:focus {
+  color: #080912; /* Цвет при фокусе */
+  transform: scale(1.5); /* Небольшое увеличение */
+  outline: none; /* Убирает стандартную рамку браузера */
+}
+
+.link:hover {
+  color: #4b56f1; /* Цвет при наведении */
+}
+
+.active {
+  color: #371af6 !important;
+  font-weight: bold;
+}

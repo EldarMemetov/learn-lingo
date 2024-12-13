@@ -1,0 +1,21 @@
+.header {
+  border-bottom: 1px solid #f2f4f7;
+  padding: 14px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #f7f7f7;
+  margin-bottom: 48px;
+}
+.centerNav {
+  display: flex;
+  gap: 28px;
+  justify-content: space-between;
+  flex-grow: 1;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.containerLogReg {
+  display: flex;
+  gap: 16px;
+}

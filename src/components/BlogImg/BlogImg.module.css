@@ -1,0 +1,17 @@
+.blogImg {
+  border-radius: 30px;
+  width: 568px;
+  height: 530px;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+  background: #bfd6ea;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.imgGirl {
+  position: relative;
+  top: 70px;
+}
+.imgMak {
+  z-index: 20;
+}

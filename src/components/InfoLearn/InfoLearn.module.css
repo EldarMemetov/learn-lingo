@@ -1,0 +1,64 @@
+.containerContent {
+  border-radius: 30px;
+  width: 720px;
+  height: 530px;
+  background: #f8f8f8;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  font-weight: 500;
+  font-size: 48px;
+  line-height: 117%;
+  letter-spacing: -0.02em;
+  color: #121417;
+  width: 548px;
+  text-align: left;
+  margin-bottom: 32px;
+}
+.titleLang {
+  font-style: italic;
+  font-weight: 400;
+  background: #9fb7ce;
+}
+.description {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 137%;
+  letter-spacing: -0.02em;
+  color: #121417;
+  width: 471px;
+  text-align: left;
+  margin-bottom: 64px;
+}
+
+.buttonStarted {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 156%;
+  border-radius: 12px;
+  padding: 16px 88px;
+  height: 60px;
+  border: none;
+  cursor: pointer;
+  background: #9fb7ce;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+.buttonStarted:focus {
+  outline: none;
+  background: #8d9ead;
+  transform: scale(1.05);
+}
+
+.buttonStarted:hover {
+  background: #8d9ead;
+  transform: scale(1.05);
+}
+
+.buttonStarted:active {
+  transform: scale(0.95);
+  background: #8d9ead;
+}
