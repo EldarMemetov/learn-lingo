@@ -1,0 +1,88 @@
+.loginForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.title {
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 120%;
+  letter-spacing: -0.02em;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.description {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 137%;
+  color: rgba(18, 20, 23, 0.8);
+  margin-bottom: 24px;
+}
+
+.inputContainer {
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.label {
+  display: none;
+}
+
+.input {
+  border: 1px solid rgba(18, 20, 23, 0.1);
+  border-radius: 12px;
+  padding: 16px 18px;
+  width: 438px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 137%;
+  color: #121417;
+}
+
+.input::placeholder {
+  color: rgba(18, 20, 23, 0.5);
+}
+
+.passwordContainer {
+  position: relative;
+}
+
+.eyeIcon {
+  position: absolute;
+  top: 50%;
+  right: 16px;
+  transform: translateY(-50%);
+  cursor: pointer;
+  font-size: 20px;
+  color: rgba(18, 20, 23, 0.5);
+}
+
+.error {
+  color: red;
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+.submitButton {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 156%;
+  border-radius: 12px;
+  padding: 16px 0;
+  width: 438px;
+  height: 60px;
+  background: #f4c550;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+}
+
+.submitButton:hover {
+  background: #e2b044;
+}

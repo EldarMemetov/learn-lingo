@@ -1,9 +1,9 @@
 import styles from "./ButtonRegistration.module.css";
 
-export default function ButtonRegistration() {
+export default function ButtonRegistration({ onClick }) {
   return (
-    <>
-      <button className={styles.register}>Registration</button>
-    </>
+    <button className={styles.register} onClick={onClick}>
+      Registration
+    </button>
   );
 }
