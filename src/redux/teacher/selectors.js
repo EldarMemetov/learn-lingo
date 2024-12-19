@@ -1,5 +1,4 @@
 export const selectTeacher = (state) => {
-  console.log("Teachers in Redux state:", state.teacher.teacher);
   return state.teacher.teacher || [];
 };
 

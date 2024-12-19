@@ -2,14 +2,21 @@ import { useState } from "react";
 import { IoBookOutline } from "react-icons/io5";
 import { FaStar } from "react-icons/fa";
 import style from "./TeacherItem.module.css";
-
+import TrialLessonModal from "../TrialLessonModal/TrialLessonModal";
 const TeacherItem = ({ teacher }) => {
   const [isExpanded, setIsExpanded] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const toggleExpanded = () => {
     setIsExpanded((prevState) => !prevState);
   };
+  const openModal = () => {
+    setIsModalOpen(true);
+  };
 
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
   return (
     <div className={style.teacherContainer}>
       <div className={style.teacherPhotoWrapper}>
@@ -133,7 +140,17 @@ const TeacherItem = ({ teacher }) => {
               </div>
             )}
 
-            <button className={style.buttonTrial}>Book trial lesson</button>
+            {isExpanded && (
+              <button className={style.buttonTrial} onClick={openModal}>
+                Book trial lesson
+              </button>
+            )}
+
+            <TrialLessonModal
+              isOpen={isModalOpen}
+              onClose={closeModal}
+              teacher={teacher}
+            />
           </>
         )}
 
