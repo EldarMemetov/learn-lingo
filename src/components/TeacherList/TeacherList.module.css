@@ -1,0 +1,25 @@
+.containerTeachers {
+  display: flex;
+  justify-content: center;
+}
+.itemTeachers {
+  border-radius: 24px;
+  width: 1184px;
+  background: #fff;
+  padding: 24px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.itemTeachers.expanded {
+  min-height: auto;
+  height: auto;
+}
+
+.listTeacher {
+  display: flex;
+  gap: 32px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 32px;
+}

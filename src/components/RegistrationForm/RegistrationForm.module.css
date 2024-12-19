@@ -35,7 +35,7 @@
 }
 
 .label {
-  display: none; /* Убрано для минималистичного дизайна */
+  display: none;
 }
 
 .input {
@@ -75,4 +75,17 @@
 
 .submitButton:hover {
   background: #e2b044;
+}
+.passwordContainer {
+  position: relative;
+}
+
+.eyeIcon {
+  position: absolute;
+  top: 50%;
+  right: 16px;
+  transform: translateY(-50%);
+  cursor: pointer;
+  font-size: 20px;
+  color: rgba(18, 20, 23, 0.5);
 }

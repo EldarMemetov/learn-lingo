@@ -1,0 +1,332 @@
+.teacherContainer {
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+}
+
+.teacherPhotoWrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 120px;
+  height: 120px;
+  border: 3px solid #fbe9ba;
+  border-radius: 100px;
+  background: #fff;
+}
+
+.teacherPhoto {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.onlineIndicator {
+  position: absolute;
+  top: 25px;
+  left: 93px;
+  width: 6px;
+  height: 6px;
+  background-color: #00ff00;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  z-index: 10;
+}
+
+.contentBlock {
+  display: flex;
+  flex-direction: column;
+}
+
+.listInfo {
+  display: flex;
+  margin-left: auto;
+  gap: 16px;
+}
+
+.itemInfo::after {
+  content: "";
+  display: block;
+  width: 1px;
+  height: 20px;
+  background-color: rgba(18, 20, 23, 0.2);
+  position: absolute;
+  right: -8px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.itemInfo:last-child::after {
+  display: none;
+}
+
+.iconStyle {
+  margin-right: 8px;
+  width: 16px;
+  height: 16px;
+  color: #555;
+}
+
+.readMoreButton {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  text-decoration: underline;
+  text-decoration-skip-ink: none;
+  background: none;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+  padding: 0px;
+  margin-bottom: 32px;
+}
+
+.teacherInfo {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.leftInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  margin-bottom: 32px;
+}
+
+.languagesLabel {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  color: #8a8a89;
+}
+
+.teacherName {
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 100%;
+  color: #121417;
+}
+
+.rightInfo {
+  display: flex;
+  gap: 16px;
+}
+
+.itemInfo {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.itemInfo:not(:last-child)::after {
+  content: "";
+  display: block;
+  width: 1px;
+  height: 20px;
+  background-color: rgba(18, 20, 23, 0.2);
+  position: absolute;
+  right: -8px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.iconStyle {
+  margin-right: 8px;
+  width: 16px;
+  height: 16px;
+  color: #555;
+}
+
+.textInfo {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  color: #121417;
+}
+
+.infoMainGold {
+  font-weight: 500;
+  font-size: 16px;
+  color: #38cd3e;
+}
+.infoMainHistory {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  color: #8a8a89;
+}
+
+.textInformationL {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  text-align: left;
+}
+.itemInformationL {
+  margin-bottom: 8px;
+}
+.textInformationLSpeaks {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  text-align: left;
+  text-decoration: underline;
+  color: #121417;
+  text-align: left;
+}
+.infoMainHistoryNext {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  color: #8a8a89;
+  text-align: left;
+}
+.ListInformationL {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.levelItemFirst {
+  border-radius: 35px;
+  padding: 8px 12px;
+  width: 110px;
+  height: 32px;
+  background: #f4c550;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 114%;
+  color: #121417;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.levelItem {
+  border: 1px solid rgba(18, 20, 23, 0.2);
+  border-radius: 35px;
+  padding: 8px 12px;
+  width: 124px;
+  height: 32px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 114%;
+  color: #121417;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.levelList {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.listInformationL {
+  display: flex;
+  align-items: flex-start;
+}
+.experience {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: #121417;
+  text-align: left;
+  width: 900px;
+  margin-bottom: 32px;
+}
+
+.reviewsContainer {
+  margin-top: 16px;
+}
+
+.reviewsList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.reviewItem {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 22px;
+  gap: 10px;
+}
+
+.reviewerPhoto {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.reviewContent {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.reviewerInfo {
+  display: flex;
+  gap: 5px;
+  flex-direction: column;
+}
+
+.reviewerName {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  color: #8a8a89;
+  text-align: left;
+}
+
+.ratingBlock {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.starIcon {
+  width: 14px;
+  height: 14px;
+}
+
+.reviewerRating {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 129%;
+  color: #121417;
+}
+
+.reviewText {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  color: #121417;
+}
+.buttonTrial {
+  border-radius: 12px;
+  width: 232px;
+  height: 60px;
+  background: #f4c550;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 156%;
+  color: #121417;
+  margin-top: 32px;
+  border: none;
+  cursor: pointer;
+  margin-bottom: 32px;
+}
