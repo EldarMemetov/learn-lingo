@@ -5,7 +5,6 @@ import { toast } from "react-hot-toast";
 import Modal from "../Modal/Modal";
 import style from "./TrialLessonModal.module.css";
 
-// Схема валидации
 const schema = yup.object().shape({
   fullName: yup.string().required("Full Name is required"),
   email: yup.string().email("Invalid email").required("Email is required"),
@@ -26,33 +25,35 @@ const TrialLessonModal = ({ isOpen, onClose, teacher }) => {
     resolver: yupResolver(schema),
   });
 
-  // Обработчик отправки формы
   const onSubmit = (data) => {
     console.log("Booking data:", data);
     toast.success("Trial lesson booked successfully!");
-    onClose(); // Закрыть модальное окно после отправки
+    onClose();
   };
 
   return (
     <Modal isOpen={isOpen} onClose={onClose} title="Book trial lesson">
-      <p>
+      <p className={style.description}>
         Our experienced tutor will assess your current language level, discuss
         your learning goals, and tailor the lesson to your specific needs.
       </p>
       <div className={style.teacherInfo}>
-        <p>Your teacher: {teacher.name}</p>
         <img
           src={teacher.avatar_url}
           alt={`${teacher.name} ${teacher.surname}`}
           className={style.reviewerPhoto}
         />
+        <div className={style.teacherNameContainer}>
+          <p className={style.teacher}>Your teacher:</p>
+          <p className={style.teacherName}>{teacher.name}</p>
+        </div>
       </div>
       <form onSubmit={handleSubmit(onSubmit)} className={style.form}>
         <p className={style.reasonLabel}>
           What is your main reason for learning English?
         </p>
         <div className={style.radioGroup}>
-          <label>
+          <label className={style.labelInput}>
             <input
               type="radio"
               value="Career and business"
@@ -60,7 +61,7 @@ const TrialLessonModal = ({ isOpen, onClose, teacher }) => {
             />
             Career and business
           </label>
-          <label>
+          <label className={style.labelInput}>
             <input
               type="radio"
               value="Lesson for kids"
@@ -68,11 +69,11 @@ const TrialLessonModal = ({ isOpen, onClose, teacher }) => {
             />
             Lesson for kids
           </label>
-          <label>
+          <label className={style.labelInput}>
             <input type="radio" value="Living abroad" {...register("reason")} />
             Living abroad
           </label>
-          <label>
+          <label className={style.labelInput}>
             <input
               type="radio"
               value="Exams and coursework"
@@ -80,7 +81,7 @@ const TrialLessonModal = ({ isOpen, onClose, teacher }) => {
             />
             Exams and coursework
           </label>
-          <label>
+          <label className={style.labelInput}>
             <input
               type="radio"
               value="Culture, travel or hobby"
@@ -93,22 +94,30 @@ const TrialLessonModal = ({ isOpen, onClose, teacher }) => {
           )}
         </div>
         <div className={style.inputGroup}>
-          <label>Full Name</label>
-          <input type="text" {...register("fullName")} />
+          <label></label>
+          <input
+            placeholder="Full Name"
+            type="text"
+            {...register("fullName")}
+          />
           {errors.fullName && (
             <p className={style.errorText}>{errors.fullName.message}</p>
           )}
         </div>
         <div className={style.inputGroup}>
-          <label>Email</label>
-          <input type="email" {...register("email")} />
+          <label></label>
+          <input placeholder="Email" type="email" {...register("email")} />
           {errors.email && (
             <p className={style.errorText}>{errors.email.message}</p>
           )}
         </div>
         <div className={style.inputGroup}>
-          <label>Phone number</label>
-          <input type="text" {...register("phone")} />
+          <label></label>
+          <input
+            placeholder="Phone number"
+            type="text"
+            {...register("phone")}
+          />
           {errors.phone && (
             <p className={style.errorText}>{errors.phone.message}</p>
           )}
