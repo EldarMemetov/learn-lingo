@@ -260,9 +260,10 @@
 
 .reviewItem {
   display: flex;
-  align-items: flex-start;
   margin-bottom: 22px;
-  gap: 10px;
+  gap: 16px;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .reviewerPhoto {
@@ -329,4 +330,21 @@
   border: none;
   cursor: pointer;
   margin-bottom: 32px;
+}
+.heardIcon {
+  margin-left: auto;
+}
+.containerReviewPeople {
+  display: flex;
+  gap: 12px;
+}
+.buttonHeart {
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  transition: transform 0.3s ease;
+}
+
+.buttonHeart:focus {
+  transform: scale(1.1);
 }

@@ -3,6 +3,7 @@ import { IoBookOutline } from "react-icons/io5";
 import { FaStar } from "react-icons/fa";
 import style from "./TeacherItem.module.css";
 import TrialLessonModal from "../TrialLessonModal/TrialLessonModal";
+import { CiHeart } from "react-icons/ci";
 const TeacherItem = ({ teacher }) => {
   const [isExpanded, setIsExpanded] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -56,6 +57,11 @@ const TeacherItem = ({ teacher }) => {
                 </span>
               </p>
             </li>
+            <li className={style.itemInfo} style={{ marginLeft: "auto" }}>
+              <button className={style.buttonHeart}>
+                <CiHeart size={26} className={style.heardIcon} />
+              </button>
+            </li>
           </ul>
         </div>
         <ul className={style.ListInformationL}>
@@ -92,48 +98,45 @@ const TeacherItem = ({ teacher }) => {
           <>
             <p className={style.experience}>{teacher.experience}</p>
 
-            {/* Отзывы */}
             {teacher.reviews && teacher.reviews.length > 0 && (
               <div className={style.reviewsContainer}>
                 <ul className={style.reviewsList}>
                   {teacher.reviews.map((review, index) => (
                     <li key={index} className={style.reviewItem}>
-                      {/* Фотография */}
-                      <img
-                        src={review.reviewer_avatar_url || teacher.avatar_url}
-                        alt={
-                          review.reviewer_name ||
-                          `${teacher.name} ${teacher.surname}`
-                        }
-                        className={style.reviewerPhoto}
-                      />
+                      <div className={style.containerReviewPeople}>
+                        <img
+                          src={review.reviewer_avatar_url || teacher.avatar_url}
+                          alt={
+                            review.reviewer_name ||
+                            `${teacher.name} ${teacher.surname}`
+                          }
+                          className={style.reviewerPhoto}
+                        />
 
-                      {/* Информация о рецензии */}
-                      <div className={style.reviewContent}>
-                        {/* Имя и рейтинг */}
-                        <div className={style.reviewerInfo}>
-                          {review.reviewer_name && (
-                            <p className={style.reviewerName}>
-                              {review.reviewer_name}
-                            </p>
-                          )}
-                          {review.reviewer_rating && (
-                            <div className={style.ratingBlock}>
-                              <FaStar
-                                style={{ color: "gold" }}
-                                className={style.starIcon}
-                              />
-                              <p className={style.reviewerRating}>
-                                {review.reviewer_rating}
+                        <div className={style.reviewContent}>
+                          <div className={style.reviewerInfo}>
+                            {review.reviewer_name && (
+                              <p className={style.reviewerName}>
+                                {review.reviewer_name}
                               </p>
-                            </div>
-                          )}
+                            )}
+                            {review.reviewer_rating && (
+                              <div className={style.ratingBlock}>
+                                <FaStar
+                                  style={{ color: "gold" }}
+                                  className={style.starIcon}
+                                />
+                                <p className={style.reviewerRating}>
+                                  {review.reviewer_rating}
+                                </p>
+                              </div>
+                            )}
+                          </div>
                         </div>
-                        {/* Текст отзыва */}
-                        {review.comment && (
-                          <p className={style.reviewText}>{review.comment}</p>
-                        )}
                       </div>
+                      {review.comment && (
+                        <p className={style.reviewText}>{review.comment}</p>
+                      )}
                     </li>
                   ))}
                 </ul>
