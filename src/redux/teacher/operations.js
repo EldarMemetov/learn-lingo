@@ -1,14 +1,21 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import axios from "axios";
+import { getDatabase, ref, get } from "firebase/database";
 import { toast } from "react-hot-toast";
+import app from "../../firebaseConfig/firebaseConfig";
 
 export const fetchTeacher = createAsyncThunk(
   "teacher/fetchTeacher",
   async (_, thunkAPI) => {
     try {
-      const response = await axios.get("/teachers.json");
+      const db = getDatabase(app);
+      const teachersRef = ref(db, "teachers");
+      const snapshot = await get(teachersRef);
 
-      const teachers = response.data ? Object.values(response.data) : [];
+      if (!snapshot.exists()) {
+        throw new Error("No data found");
+      }
+
+      const teachers = snapshot.val() ? Object.values(snapshot.val()) : [];
 
       const cleanedTeachers = teachers.map((teacher, index) => {
         if (!teacher.id) {
