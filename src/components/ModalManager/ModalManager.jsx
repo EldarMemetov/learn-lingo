@@ -26,12 +26,11 @@ export default function ModalManager({ children }) {
         onClose={closeModal}
         title={modalContent === "login" ? "Log In" : "Registration"}
       >
-        {modalContent === "login" && (
-          <LoginForm onSubmit={(data) => console.log("Login Data:", data)} />
-        )}
+        {modalContent === "login" && <LoginForm onClose={closeModal} />}
         {modalContent === "registration" && (
           <RegistrationForm
             onSubmit={(data) => console.log("Registration Data:", data)}
+            onClose={closeModal}
           />
         )}
       </Modal>

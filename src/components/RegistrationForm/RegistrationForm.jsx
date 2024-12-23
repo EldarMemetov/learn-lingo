@@ -2,8 +2,11 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
-import styles from "./RegistrationForm.module.css";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../../firebaseConfig/firebaseConfig";
+import { toast, Toaster } from "react-hot-toast";
+import styles from "./RegistrationForm.module.css";
 
 const schema = yup.object({
   name: yup.string().required("Name is required"),
@@ -14,11 +17,12 @@ const schema = yup.object({
     .required("Password is required"),
 });
 
-export default function RegistrationForm({ onSubmit }) {
+export default function RegistrationForm({ onClose }) {
   const [showPassword, setShowPassword] = useState(false);
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm({
     resolver: yupResolver(schema),
@@ -28,11 +32,29 @@ export default function RegistrationForm({ onSubmit }) {
     setShowPassword(!showPassword);
   };
 
+  const onSubmit = async (data) => {
+    try {
+      const userCredential = await createUserWithEmailAndPassword(
+        auth,
+        data.email,
+        data.password
+      );
+      toast.success(
+        `User ${userCredential.user.email} successfully registered!`
+      );
+      reset(); // Очистка формы
+      if (onClose) onClose(); // Закрытие формы (если передан обработчик)
+    } catch (err) {
+      toast.error(`Registration failed: ${err.message}`);
+    }
+  };
+
   return (
     <div className={styles.registrationForm}>
+      <Toaster position="top-right" reverseOrder={false} />
       <p className={styles.description}>
-        Thank you for your interest in our platform! In order to register, we
-        need some information. Please provide us with the following information.
+        Thank you for your interest in our platform! Please provide your details
+        to register.
       </p>
       <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
         <div className={styles.inputContainer}>

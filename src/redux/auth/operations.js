@@ -1,19 +1,93 @@
-// import { createAsyncThunk } from "@reduxjs/toolkit";
-// import axios from "axios";
-// import { toast } from "react-hot-toast";
+import { createAsyncThunk } from "@reduxjs/toolkit";
+import {
+  getAuth,
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  signOut,
+  onAuthStateChanged,
+} from "firebase/auth";
+import app from "../../firebaseConfig/firebaseConfig";
 
-// axios.defaults.baseUrl =
-//   "https://learn-lingo-7dc83-default-rtdb.firebaseio.com";
+const auth = getAuth(app);
 
-// export const fetchTeacher = createAsyncThunk(
-//   "water/fetchVolumes",
-//   async (_, thunkAPI) => {
-//     try {
-//       const response = await axios.get("/teacher");
-//       return response.data;
-//     } catch (error) {
-//       toast.error("Failed to fetch water volumes.");
-//       return thunkAPI.rejectWithValue(error.message);
-//     }
-//   }
-// );
+// Регистрация
+export const registerUser = createAsyncThunk(
+  "auth/registerUser",
+  async ({ email, password }, thunkAPI) => {
+    try {
+      const userCredential = await createUserWithEmailAndPassword(
+        auth,
+        email,
+        password
+      );
+      return {
+        user: {
+          email: userCredential.user.email,
+          uid: userCredential.user.uid,
+        },
+        token: await userCredential.user.getIdToken(),
+      };
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.code || error.message);
+    }
+  }
+);
+
+// Вход
+export const loginUser = createAsyncThunk(
+  "auth/loginUser",
+  async ({ email, password }, thunkAPI) => {
+    try {
+      const userCredential = await signInWithEmailAndPassword(
+        auth,
+        email,
+        password
+      );
+      return {
+        user: {
+          email: userCredential.user.email,
+          uid: userCredential.user.uid,
+        },
+        token: await userCredential.user.getIdToken(),
+      };
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.code || error.message);
+    }
+  }
+);
+
+// Выход
+export const logoutUser = createAsyncThunk(
+  "auth/logoutUser",
+  async (_, thunkAPI) => {
+    try {
+      await signOut(auth);
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.code || error.message);
+    }
+  }
+);
+
+// Обновление пользователя
+export const refreshUser = createAsyncThunk(
+  "auth/refreshUser",
+  async (_, thunkAPI) => {
+    const auth = getAuth(app);
+    try {
+      return new Promise((resolve, reject) => {
+        onAuthStateChanged(auth, (user) => {
+          if (user) {
+            resolve({
+              email: user.email,
+              uid: user.uid,
+            });
+          } else {
+            reject(thunkAPI.rejectWithValue("User is not authenticated"));
+          }
+        });
+      });
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.code || error.message);
+    }
+  }
+);
