@@ -3,7 +3,9 @@ import { IoBookOutline } from "react-icons/io5";
 import { FaStar } from "react-icons/fa";
 import style from "./TeacherItem.module.css";
 import TrialLessonModal from "../TrialLessonModal/TrialLessonModal";
-import { CiHeart } from "react-icons/ci";
+
+import FavoritesButton from "../FavoritesButton/FavoritesButton";
+
 const TeacherItem = ({ teacher }) => {
   const [isExpanded, setIsExpanded] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -58,9 +60,7 @@ const TeacherItem = ({ teacher }) => {
               </p>
             </li>
             <li className={style.itemInfo} style={{ marginLeft: "auto" }}>
-              <button className={style.buttonHeart}>
-                <CiHeart size={26} className={style.heardIcon} />
-              </button>
+              <FavoritesButton />
             </li>
           </ul>
         </div>

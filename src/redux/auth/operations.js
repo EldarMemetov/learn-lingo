@@ -72,22 +72,23 @@ export const logoutUser = createAsyncThunk(
 export const refreshUser = createAsyncThunk(
   "auth/refreshUser",
   async (_, thunkAPI) => {
-    const auth = getAuth(app);
     try {
-      return new Promise((resolve, reject) => {
-        onAuthStateChanged(auth, (user) => {
+      return await new Promise((resolve, reject) => {
+        onAuthStateChanged(auth, async (user) => {
           if (user) {
+            const token = await user.getIdToken();
             resolve({
               email: user.email,
               uid: user.uid,
+              token,
             });
           } else {
-            reject(thunkAPI.rejectWithValue("User is not authenticated"));
+            reject("User is not authenticated");
           }
         });
       });
     } catch (error) {
-      return thunkAPI.rejectWithValue(error.code || error.message);
+      return thunkAPI.rejectWithValue(error);
     }
   }
 );

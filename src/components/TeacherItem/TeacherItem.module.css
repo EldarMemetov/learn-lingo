@@ -338,13 +338,3 @@
   display: flex;
   gap: 12px;
 }
-.buttonHeart {
-  cursor: pointer;
-  border: none;
-  background: transparent;
-  transition: transform 0.3s ease;
-}
-
-.buttonHeart:focus {
-  transform: scale(1.1);
-}
