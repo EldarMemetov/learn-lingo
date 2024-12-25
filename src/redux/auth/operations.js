@@ -10,7 +10,6 @@ import app from "../../firebaseConfig/firebaseConfig";
 
 const auth = getAuth(app);
 
-// Регистрация
 export const registerUser = createAsyncThunk(
   "auth/registerUser",
   async ({ email, password }, thunkAPI) => {
@@ -33,7 +32,6 @@ export const registerUser = createAsyncThunk(
   }
 );
 
-// Вход
 export const loginUser = createAsyncThunk(
   "auth/loginUser",
   async ({ email, password }, thunkAPI) => {
@@ -56,7 +54,6 @@ export const loginUser = createAsyncThunk(
   }
 );
 
-// Выход
 export const logoutUser = createAsyncThunk(
   "auth/logoutUser",
   async (_, thunkAPI) => {
@@ -68,7 +65,6 @@ export const logoutUser = createAsyncThunk(
   }
 );
 
-// Обновление пользователя
 export const refreshUser = createAsyncThunk(
   "auth/refreshUser",
   async (_, thunkAPI) => {

@@ -24,6 +24,7 @@ const authSlice = createSlice({
         state.token = action.payload.token;
         state.error = null;
       })
+
       .addCase(logoutUser.fulfilled, (state) => {
         state.user = null;
         state.token = null;
@@ -33,11 +34,12 @@ const authSlice = createSlice({
       })
       .addCase(refreshUser.fulfilled, (state, action) => {
         state.user = action.payload;
+        state.token = action.payload.token;
         state.isRefreshing = false;
       })
       .addCase(refreshUser.rejected, (state, action) => {
+        console.log("Failed to refresh user:", action.payload);
         state.isRefreshing = false;
-        state.error = action.payload;
       });
   },
 });

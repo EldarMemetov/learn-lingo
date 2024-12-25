@@ -1,5 +1,6 @@
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
+
 const firebaseConfig = {
   apiKey: "AIzaSyBvl_jMC7WrXgsBKOZjRiCpZwKh6Pmc6Yg",
   authDomain: "learn-lingo-7dc83.firebaseapp.com",
@@ -11,5 +12,7 @@ const firebaseConfig = {
 };
 
 const app = initializeApp(firebaseConfig);
+
 export const auth = getAuth(app);
+
 export default app;

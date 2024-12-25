@@ -60,7 +60,7 @@ const TeacherItem = ({ teacher }) => {
               </p>
             </li>
             <li className={style.itemInfo} style={{ marginLeft: "auto" }}>
-              <FavoritesButton />
+              <FavoritesButton teacherId={teacher.id} />
             </li>
           </ul>
         </div>

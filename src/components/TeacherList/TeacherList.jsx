@@ -7,6 +7,7 @@ import {
   selectError,
   selectFilters,
 } from "../../redux/teacher/selectors";
+import { loadFavorites } from "../../redux/teacher/slice";
 import TeacherItem from "../TeacherItem/TeacherItem";
 import styled from "./TeacherList.module.css";
 import Loading from "../Loading/Loading";
@@ -24,6 +25,7 @@ const TeacherList = () => {
 
   useEffect(() => {
     dispatch(fetchTeacher());
+    dispatch(loadFavorites());
   }, [dispatch]);
 
   const filteredTeachers = teachers.filter((teacher) => {
@@ -67,7 +69,7 @@ const TeacherList = () => {
           )}
         </>
       ) : (
-        <p className={styled.noTeachers}>No teachers available.</p>
+        <p className={styled.noTeachers}>No teachers found.</p>
       )}
     </div>
   );

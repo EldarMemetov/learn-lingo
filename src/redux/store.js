@@ -9,24 +9,32 @@ import {
   PURGE,
   REGISTER,
 } from "redux-persist";
-
 import storage from "redux-persist/lib/storage";
 import authReducer from "./auth/slice";
 import teacherReducer from "./teacher/slice";
 
 const persistedAuthReducer = persistReducer(
   {
-    key: "auth-token",
+    key: "auth",
     storage,
-    whitelist: ["token"],
+    whitelist: ["user"],
   },
   authReducer
+);
+
+const persistedTeacherReducer = persistReducer(
+  {
+    key: "teacher-favorites",
+    storage,
+    whitelist: ["favorites"],
+  },
+  teacherReducer
 );
 
 export const store = configureStore({
   reducer: {
     auth: persistedAuthReducer,
-    teacher: teacherReducer,
+    teacher: persistedTeacherReducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({

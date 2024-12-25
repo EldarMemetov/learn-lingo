@@ -1,0 +1,74 @@
+.sectionFavorites {
+  background-color: antiquewhite;
+  padding-top: 20px;
+  margin-bottom: 10px;
+}
+.containerTeachers {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 1rem;
+}
+
+.listTeacher {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.5rem;
+  padding: 0;
+  margin: 0;
+}
+
+.itemTeachers {
+  background-color: #f9f9f9;
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.itemTeachers:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.loadMoreButton {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  align-self: center;
+  transition: background-color 0.3s;
+}
+
+.loadMoreButton:hover {
+  background-color: #0056b3;
+}
+
+.noTeachers {
+  color: #888;
+  text-align: center;
+  font-size: 1.25rem;
+  margin-top: 2rem;
+}
+
+.favoriteSection {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 1rem;
+  background-color: #fff3cd;
+}
+
+.favoriteSection h2 {
+  font-size: 1.5rem;
+  color: #856404;
+}
+
+.favoriteSection .listTeacher {
+  background-color: #fffbea;
+  padding: 1rem;
+  border-radius: 8px;
+}

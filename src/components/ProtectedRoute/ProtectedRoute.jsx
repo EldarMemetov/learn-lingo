@@ -1,16 +1,17 @@
-import { useAuthState } from "react-firebase-hooks/auth";
 import { Navigate } from "react-router-dom";
-import { auth } from "../../firebaseConfig/firebaseConfig";
+import { useSelector } from "react-redux";
+import { selectIsAuthenticated } from "../../redux/auth/selectors";
 import Loading from "../Loading/Loading";
 
 export default function ProtectedRoute({ children }) {
-  const [user, loading] = useAuthState(auth);
+  const isAuthenticated = useSelector(selectIsAuthenticated);
+  const isRefreshing = useSelector((state) => state.auth.isRefreshing);
 
-  if (loading) {
+  if (isRefreshing) {
     return <Loading />;
   }
 
-  if (!user) {
+  if (!isAuthenticated) {
     return <Navigate to="/" replace />;
   }
 
