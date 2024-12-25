@@ -19,7 +19,7 @@ export default function AppBar() {
   return (
     <ModalManager>
       {({ openModal }) => (
-        <header>
+        <header className={styles.header}>
           <div className={styles.centerNav}>
             <Logo />
             <Navigation />

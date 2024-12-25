@@ -12,9 +12,11 @@ const Favorites = () => {
 
   return (
     <section className={style.sectionFavorites}>
-      <h1>Featured Teachers</h1>
+      <h1 className={style.teachers}>Featured Teachers</h1>
       {favoriteTeachers.length === 0 ? (
-        <p>You have no chosen teachers. Start adding them!</p>
+        <p className={style.infoText}>
+          You have no chosen teachers. Start adding them!
+        </p>
       ) : (
         <ul className={style.containerTeachers}>
           {favoriteTeachers.map((teacher) => (

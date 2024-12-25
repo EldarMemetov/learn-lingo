@@ -3,3 +3,9 @@
   gap: 24px;
   margin-bottom: 24px;
 }
+.homePage {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 20px;
+}

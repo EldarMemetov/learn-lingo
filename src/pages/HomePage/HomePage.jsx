@@ -4,7 +4,7 @@ import InfoWeb from "../../components/InfoWeb/InfoWeb";
 import styles from "./HomePage.module.css";
 export default function HomePage() {
   return (
-    <div>
+    <div className={styles.homePage}>
       <div className={styles.homeContainer}>
         <InfoLearn />
         <BlogImg />
