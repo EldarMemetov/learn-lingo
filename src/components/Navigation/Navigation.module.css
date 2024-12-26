@@ -5,17 +5,17 @@
   font-weight: 400;
   font-size: 16px;
   line-height: 125%;
-  transition: color 0.3s ease, transform 0.3s ease; /* Плавная анимация цвета и трансформации */
+  transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .link:focus {
-  color: #080912; /* Цвет при фокусе */
-  transform: scale(1.5); /* Небольшое увеличение */
-  outline: none; /* Убирает стандартную рамку браузера */
+  color: #080912;
+  transform: scale(1.5);
+  outline: none;
 }
 
 .link:hover {
-  color: #4b56f1; /* Цвет при наведении */
+  color: #4b56f1;
 }
 
 .active {

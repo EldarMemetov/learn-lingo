@@ -1,6 +1,5 @@
 import { lazy, Suspense, useEffect } from "react";
 import HomePage from "../../pages/HomePage/HomePage";
-import "./App.css";
 import { Routes, Route } from "react-router-dom";
 import Layout from "../Layout/Layout";
 import { Toaster } from "react-hot-toast";

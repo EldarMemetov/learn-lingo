@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styles from "./InfoLearn.module.css";
 
 export default function InfoLearn() {
@@ -12,7 +13,9 @@ export default function InfoLearn() {
         Elevate your language proficiency to new heights by connecting with
         highly qualified and experienced tutors.
       </p>
-      <button className={styles.buttonStarted}>Get started</button>
+      <Link to="/teachers">
+        <button className={styles.buttonStarted}>Get started</button>
+      </Link>
     </div>
   );
 }

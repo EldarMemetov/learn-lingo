@@ -39,6 +39,11 @@ const FilterTeacher = () => {
             <option value="English">English</option>
             <option value="French">French</option>
             <option value="German">German</option>
+            <option value="Spanish">Spanish</option>
+            <option value="Mandarin Chinese">Mandarin Chinese</option>
+            <option value="Italian">Italian</option>
+            <option value="Korean">Korean</option>
+            <option value="Vietnamese">Vietnamese</option>
           </select>
         </div>
         <div className={styles.filterInformation}>
@@ -65,13 +70,10 @@ const FilterTeacher = () => {
           </label>
           <select id="priceFilter" onChange={handlePriceChange}>
             <option value="">All Prices</option>
-            <option value="20">20$</option>
             <option value="25">25$</option>
             <option value="30">30$</option>
             <option value="35">35$</option>
             <option value="40">40$</option>
-            <option value="45">45$</option>
-            <option value="50">50$</option>
           </select>
         </div>
         <button
