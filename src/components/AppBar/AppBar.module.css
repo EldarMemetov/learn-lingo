@@ -38,3 +38,9 @@
 .logoutButton:hover {
   background-color: #ff1a1a;
 }
+
+@media screen and (min-width: 768px) {
+}
+
+@media screen and (min-width: 320px) {
+}
