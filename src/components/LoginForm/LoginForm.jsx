@@ -36,8 +36,8 @@ export default function LoginForm({ onClose }) {
         data.password
       );
       toast.success(`Welcome back, ${userCredential.user.email}!`);
-      reset(); // Очистка формы
-      if (onClose) onClose(); // Закрытие формы, если передан onClose
+      reset();
+      if (onClose) onClose();
     } catch (err) {
       toast.error(`Login failed: ${err.message}`);
     }

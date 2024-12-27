@@ -89,3 +89,48 @@
   font-size: 20px;
   color: rgba(18, 20, 23, 0.5);
 }
+@media (max-width: 768px) {
+  .registrationForm {
+    align-items: stretch;
+  }
+
+  .inputContainer {
+    width: 100%;
+  }
+
+  .input {
+    width: 100%;
+    max-width: 100%;
+    padding: 14px 16px;
+    box-sizing: border-box;
+  }
+
+  .submitButton {
+    width: 100%;
+    font-size: 16px;
+    padding: 14px 0;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 562px) {
+  .registrationForm {
+    align-items: stretch;
+  }
+
+  .inputContainer {
+    width: 100%;
+  }
+
+  .input {
+    width: 100%;
+    padding: 12px 14px;
+    font-size: 14px;
+  }
+
+  .submitButton {
+    width: 100%;
+    font-size: 14px;
+    padding: 12px 0;
+  }
+}

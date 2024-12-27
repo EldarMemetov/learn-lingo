@@ -86,3 +86,48 @@
 .submitButton:hover {
   background: #e2b044;
 }
+
+@media (max-width: 768px) {
+  .inputContainer {
+    width: 100%;
+  }
+
+  .input {
+    width: 100%;
+    max-width: 100%;
+    padding: 14px 16px;
+    box-sizing: border-box;
+  }
+
+  .submitButton {
+    width: 100%;
+    font-size: 16px;
+    padding: 14px 0;
+    max-width: 100%;
+  }
+  .loginForm {
+    align-items: stretch;
+  }
+}
+
+@media (max-width: 562px) {
+  .inputContainer {
+    width: 100%;
+  }
+
+  .input {
+    width: 100%;
+    padding: 12px 14px;
+    font-size: 14px;
+  }
+
+  .submitButton {
+    width: 100%;
+    font-size: 14px;
+    padding: 12px 0;
+  }
+
+  .loginForm {
+    align-items: stretch;
+  }
+}
