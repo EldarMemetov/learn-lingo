@@ -19,7 +19,6 @@
   .homePage {
     display: flex;
     margin-bottom: 20px;
-    padding: 20px;
     flex-wrap: wrap;
     flex-direction: column;
     align-items: center;
