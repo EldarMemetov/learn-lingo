@@ -1,12 +1,11 @@
 .blogImg {
   border-radius: 30px;
-  width: 568px;
-  height: 530px;
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
   background: #bfd6ea;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  width: 100%;
 }
 .imgGirl {
   position: relative;
@@ -14,4 +13,28 @@
 }
 .imgMak {
   z-index: 20;
+}
+@media screen and (max-width: 1030px) {
+  .blogImg {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+@media screen and (max-width: 680px) {
+  .blogImg {
+    padding: 16px;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .imgGirl {
+    width: 200px;
+    height: 200px;
+    top: 35px;
+  }
+
+  .imgMak {
+    width: 90%;
+    max-width: 300px;
+  }
 }

@@ -241,7 +241,6 @@
   line-height: 150%;
   color: #121417;
   text-align: left;
-  width: 900px;
   margin-bottom: 32px;
 }
 
@@ -337,4 +336,107 @@
 .containerReviewPeople {
   display: flex;
   gap: 12px;
+}
+
+@media screen and (max-width: 1227px) {
+  .teacherContainer {
+    flex-direction: column;
+  }
+}
+@media screen and (max-width: 500px) {
+  .containerTeachers {
+    padding: 0 12px;
+  }
+  .rightInfo {
+    display: flex;
+    gap: 16px;
+    flex-direction: column;
+    align-content: center;
+    align-items: flex-end;
+  }
+  .itemTeachers {
+    width: 100%;
+    padding: 16px;
+    border-radius: 16px;
+    margin-bottom: 16px;
+  }
+
+  .listTeacher {
+    gap: 16px;
+    margin-top: 16px;
+    margin-bottom: 16px;
+  }
+
+  .loadMoreButton {
+    width: 100%;
+    height: 50px;
+    font-size: 16px;
+    margin-top: 24px;
+    margin-bottom: 24px;
+    padding: 8px;
+  }
+
+  .noTeachers {
+    font-size: 20px;
+    line-height: 140%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  .teacherPhotoWrapper {
+    width: 100px;
+    height: 100px;
+  }
+
+  .teacherPhoto {
+    width: 80px;
+    height: 80px;
+  }
+
+  .contentBlock {
+    font-size: 16px;
+  }
+
+  .teacherName {
+    font-size: 20px;
+  }
+
+  .languagesLabel {
+    font-size: 14px;
+  }
+
+  .textInfo,
+  .infoMainGold,
+  .infoMainHistory,
+  .textInformationL,
+  .textInformationLSpeaks,
+  .infoMainHistoryNext {
+    font-size: 14px;
+  }
+
+  .levelItem,
+  .levelItemFirst {
+    width: auto;
+    font-size: 12px;
+    padding: 8px;
+  }
+
+  .buttonTrial {
+    width: 100%;
+    height: 50px;
+    font-size: 16px;
+  }
+
+  .reviewItem {
+    gap: 12px;
+  }
+
+  .reviewerPhoto {
+    width: 50px;
+    height: 50px;
+  }
+
+  .reviewText {
+    font-size: 14px;
+  }
 }

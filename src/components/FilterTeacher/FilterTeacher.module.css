@@ -24,7 +24,8 @@ select {
   background: #fff;
   border-radius: 14px;
   padding: 10px 10px 10px 10px;
-  width: 221px;
+
+  width: 100%;
   height: 48px;
   font-weight: 500;
   font-size: 18px;
@@ -72,4 +73,15 @@ select option {
 .resetButton:disabled {
   background-color: #d6d6d6;
   cursor: not-allowed;
+}
+@media screen and (max-width: 768px) {
+  .containerFilter {
+    flex-direction: column;
+    align-items: center;
+  }
+  select {
+    width: 221px;
+  }
+}
+@media screen and (min-width: 320px) {
 }

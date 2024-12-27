@@ -8,4 +8,24 @@
   flex-wrap: wrap;
   justify-content: center;
   margin-bottom: 20px;
+  padding: 20px;
+}
+@media screen and (max-width: 1030px) {
+  .homeContainer {
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .homePage {
+    display: flex;
+    margin-bottom: 20px;
+    padding: 20px;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+  }
+}
+
+@media screen and (max-width: 680px) {
 }
