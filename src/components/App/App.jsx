@@ -10,7 +10,7 @@ import { useDispatch } from "react-redux";
 import { refreshUser } from "../../redux/auth/operations";
 import { auth } from "../../firebaseConfig/firebaseConfig";
 import { onAuthStateChanged, getIdToken } from "firebase/auth";
-import { loadFavorites } from "../../redux/teacher/slice"; // Добавляем импорт для загрузки избранных преподавателей
+import { loadFavorites } from "../../redux/teacher/slice";
 
 const Teachers = lazy(() => import("../../pages/Teachers/Teachers"));
 const Favorites = lazy(() => import("../../pages/Favorites/Favorites"));

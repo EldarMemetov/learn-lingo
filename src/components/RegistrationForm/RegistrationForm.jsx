@@ -42,8 +42,8 @@ export default function RegistrationForm({ onClose }) {
       toast.success(
         `User ${userCredential.user.email} successfully registered!`
       );
-      reset(); // Очистка формы
-      if (onClose) onClose(); // Закрытие формы (если передан обработчик)
+      reset();
+      if (onClose) onClose();
     } catch (err) {
       toast.error(`Registration failed: ${err.message}`);
     }
